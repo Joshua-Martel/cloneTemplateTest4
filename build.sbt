@@ -1,5 +1,19 @@
-name := "base_accelerators"
 
-version := "0.1"
+import Dependencies.{compiledDependencies,testDependencies}
+import Dependencies.Libraries._
+import Dependencies.TestDependencies._
 
-scalaVersion := "2.13.10"
+name := "cloneTemplateTest4"
+version := "1.0"
+
+scalaVersion := "2.13"
+
+libraryDependencies ++= compiledDependencies(
+  logbackClassic,
+  pureConfig,
+  akkaSlf4j,
+  jwtCirce
+) ++ testDependencies(
+  akkaTestkit,
+  scalatest
+)
